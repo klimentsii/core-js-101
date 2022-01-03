@@ -1,172 +1,114 @@
-/* *******************************************************************************************
- *                                                                                           *
- * Please read the following tutorial before implementing tasks:                              *
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String   *
- *                                                                                           *
- ******************************************************************************************* */
-
-
 /**
- * Returns the result of concatenation of two strings.
- *
- * @param {string} value1
- * @param {string} value2
- * @return {string}
- *
- * @example
- *   'aa', 'bb' => 'aabb'
- *   'aa',''    => 'aa'
- *   '',  'bb'  => 'bb'
+ * Возвращает результат объединения двух строк.
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+
+function concatenateStrings(value1, value2) {
+  return value1 + value2;
 }
 
 
 /**
- * Returns the length of given string.
- *
- * @param {string} value
- * @return {number}
- *
- * @example
+ * Возвращает длину заданной строки.
  *   'aaaaa' => 5
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+
+function getStringLength(value) {
+  return value.length;
 }
 
 /**
- * Returns the result of string template and given parameters firstName and lastName.
- * Please do not use concatenation, use template string :
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings
- *
- * @param {string} firstName
- * @param {string} lastName
- * @return {string}
- *
- * @example
+ * Возвращает результат строкового шаблона и заданные параметры firstName и lastName.
+ * Пожалуйста, не используйте конкатенацию, используйте строку шаблона:
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+
+function getStringFromTemplate(firstName, lastName) {
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
- * Extracts a name from template string 'Hello, First_Name Last_Name!'.
- *
- * @param {string} value
- * @return {string}
- *
- * @example
+ * Извлекает имя из строки шаблона «Hello, First_Name Last_Name!».
  *   'Hello, John Doe!' => 'John Doe'
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
+
+function extractNameFromTemplate(value) {
+  return value.substr(7, value.length - 8);
 }
 
 
 /**
- * Returns a first char of the given string.
- *
- * @param {string} value
- * @return {string}
- *
- * @example
+ * Возвращает первый символ заданной строки.
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+
+function getFirstChar(value) {
+  return value.substr(0, 1);
 }
 
 /**
- * Removes a leading and trailing whitespace characters from string.
- *
- * @param {string} value
- * @return {string}
- *
- * @example
+ * Удаляет начальные и конечные пробельные символы из строки.
  *   '  Abracadabra'    => 'Abracadabra'
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+
+function removeLeadingAndTrailingWhitespaces(value) {
+  return value.trim();
 }
 
 /**
  * Returns a string that repeated the specified number of times.
- *
- * @param {string} value
- * @param {string} count
- * @return {string}
- *
- * @example
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(/* value, count */) {
-  throw new Error('Not implemented');
+
+function repeatString(value, count) {
+  return value.repeat(count);
 }
 
 /**
- * Remove the first occurrence of string inside another string
- *
- * @param {string} str
- * @param {string} value
- * @return {string}
- *
- * @example
+ * Возвращает строку, которая повторяется указанное количество раз.
  *   'To be or not to be', 'not'  => 'To be or  to be'
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+
+function removeFirstOccurrences(str, value) {
+  return str.replace(value, '');
 }
 
 /**
- * Remove the first and last angle brackets from tag string
+ * Удалите первую и последнюю угловые скобки из строки тега.
  *
- * @param {string} str
- * @return {string}
- *
- * @example
  *   '<div>' => 'div'
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+
+function unbracketTag(str) {
+  return str.substr(1, str.length - 2);
 }
 
 
 /**
- * Converts all characters of the specified string into the upper case
+ * Преобразует все символы указанной строки в верхний регистр
  *
- * @param {string} str
- * @return {string}
- *
- * @example
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-  throw new Error('Not implemented');
+
+function convertToUpperCase(str) {
+  return str.toUpperCase();
 }
 
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
  *
- * @param {string} str
- * @return {array}
- *
- * @example
  *   'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com'
  *   => [
  *      'angus.young@gmail.com',
@@ -175,19 +117,14 @@ function convertToUpperCase(/* str */) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+
+function extractEmails(str) {
+  return str.split(';');
 }
 
 /**
  * Returns the string representation of rectangle with specified width and height
  * using pseudograhic chars
- *
- * @param {number} width
- * @param {number} height
- * @return {string}
- *
- * @example
  *
  *            '┌────┐\n'+
  *  (6,4) =>  '│    │\n'+
@@ -202,8 +139,9 @@ function extractEmails(/* str */) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleString(width, height) {
+  const line = `│${' '.repeat(width - 2)}│\n`;
+  return `┌${'─'.repeat(width - 2)}┐\n${line.repeat(height - 2)}└${'─'.repeat(width - 2)}┘\n`;
 }
 
 
@@ -223,8 +161,8 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  return str.replace(/[A-Z]/gi, (c) => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'['ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.indexOf(c)]);
 }
 
 /**
@@ -240,8 +178,12 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  let bool = false;
+  if (typeof value === 'string' || value instanceof String) {
+    bool = true;
+  }
+  return bool;
 }
 
 
@@ -269,8 +211,13 @@ function isString(/* value */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const cards = [
+    'A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
+    'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
+    'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
+    'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
+  return cards.indexOf(value);
 }
 
 
