@@ -3,7 +3,9 @@ module.exports = {
     commonjs: true,
     es6: true,
     node: true,
+    browser: true,
     mocha: true,
+    es2020: true,
   },
   extends: [
     'airbnb-base',
