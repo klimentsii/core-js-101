@@ -235,9 +235,16 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(/* arr */) {
-  // return arr.filter((e) => arr.indexOf(e) % 2 === 1 ? e : e - arr.indexOf(e - 1));
-  throw new Error('Not implemented');
+function getMovingSum(arr) {
+  let elem;
+  return arr.map((e, i) => {
+    if (i === 0) {
+      elem = e;
+      return e;
+    }
+    elem += e;
+    return elem;
+  });
 }
 
 /**
@@ -289,8 +296,8 @@ function propagateItemsByPositionIndex(/* arr */) {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
-function get3TopItems(/* arr */) {
-  throw new Error('Not implemented');
+function get3TopItems(arr) {
+  return arr.filter((e, i) => i > arr.length - 4).reverse();
 }
 
 
@@ -425,6 +432,7 @@ function toStringList(arr) {
  *    ]
  */
 function sortCitiesArray(/* arr */) {
+  // return arr.sort((e) => e.country === )
   throw new Error('Not implemented');
 }
 
@@ -463,8 +471,8 @@ function getIdentityMatrix(/* n */) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  return Array(end - start + 1).fill().map((e, i) => start + i);
 }
 
 /**
